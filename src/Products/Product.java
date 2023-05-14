@@ -1,16 +1,12 @@
 package Products;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Product {
-
-    List<Product> products = new ArrayList<>();
+public abstract class Product {
     final private int productId;
     private static int productIdUnique = 0;
     final private String name;
     private double price;
     private int quantity;
+
 
     public Product(String name, double price, int quantity) {
         this.productId = productIdUnique++;
@@ -48,8 +44,6 @@ public class Product {
     }
 
     public void discount10() {
-        double newPrice = this.price * 0.90;
-        this.price = newPrice;
+        this.price = this.price * 0.90;
     }
-
 }

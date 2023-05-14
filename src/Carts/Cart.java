@@ -12,6 +12,7 @@ public class Cart{
 
     public void addToCart(Product product, int quantity) {
         cart.add(product);
+        product.setQuantity(product.getQuantity() - quantity);
     }
 
     public void removeFromCart(Product product) {
