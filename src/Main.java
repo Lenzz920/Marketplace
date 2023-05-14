@@ -1,27 +1,18 @@
-import Carts.Cart;
 import Products.Product;
+import Users.User;
 
 public class Main {
     public static void main(String[] args) {
-        Product lamp = new Product("Lamp", 15.99, 15);
-        Product chair = new Product("Chair", 25.99, 25);
-        Product table = new Product("Table", 45.99, 44);
+        User customer1 = new User("admin", "admin@google.com", "admin123");
 
-        Cart cart1 = new Cart();
 
-        cart1.addToCart(lamp);
-        cart1.addToCart(chair);
-        cart1.printProducts();
-        cart1.addToCart(table);
+        Product lamp = new Product("Lamp", 15, 30);
+        Product chair = new Product("Chair", 25, 50);
 
-        System.out.println("-----------------");
-        lamp.discount10();
-        cart1.printProducts();
 
-        System.out.println("-----------------");
-        System.out.println(cart1.getCartPrice());
-
-        System.out.println("-----------------");
-        System.out.println(cart1.getProduct("Table"));
+        customer1.getUserCart().addToCart(lamp, 4);
+        customer1.getUserCart().addToCart(chair, 3);
+        customer1.getUserCart().addToCart(chair, 2);
+        customer1.getUserCart().printProducts();
     }
 }

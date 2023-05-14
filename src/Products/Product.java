@@ -6,14 +6,14 @@ import java.util.List;
 public class Product {
 
     List<Product> products = new ArrayList<>();
-    final private int id;
-    private static int idUnique = 0;
+    final private int productId;
+    private static int productIdUnique = 0;
     final private String name;
     private double price;
     private int quantity;
 
     public Product(String name, double price, int quantity) {
-        this.id = idUnique++;
+        this.productId = productIdUnique++;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
@@ -22,7 +22,7 @@ public class Product {
     @Override
     public String toString() {
         return "The name of this product is: " + name +
-                ". The id of this product is: " + id +
+                ". The id of this product is: " + productId +
                 ". The price of this product is: " + price +
                 ". The available quantity is: " + quantity + ".";
     }

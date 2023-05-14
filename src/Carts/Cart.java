@@ -5,13 +5,12 @@ import Products.Product;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cart {
-
+public class Cart{
     List<Product> cart = new ArrayList<>();
     private double totalPrice;
     final private static String productNotFound = "The specified product does not exist inside the cart";
 
-    public void addToCart(Product product) {
+    public void addToCart(Product product, int quantity) {
         cart.add(product);
     }
 
@@ -39,4 +38,8 @@ public class Cart {
             }
         } return productNotFound;
     }
+
+    /* public void purchase() {
+        Order order = new Order();
+    } */
 }
